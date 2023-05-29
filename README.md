@@ -43,3 +43,10 @@ By connections Tableau to Athena to access the reporting layer
 ![ProjectAnalyticsReport](img/youtubeAdCampaignFinalAnalytics.jpg)
 
 
+<u>Next Steps</u>
+
+* Sentiment analysis in a variety of forms
+* Categorising YouTube videos based on their comments and statistics.
+* Training ML algorithms like RNNs to generate their own YouTube comments.
+* Analysing what factors affect how popular a YouTube video will be.
+* Statistical analysis over time
