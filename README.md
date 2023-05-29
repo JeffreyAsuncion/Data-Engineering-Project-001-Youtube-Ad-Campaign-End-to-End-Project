@@ -11,8 +11,8 @@ Project Goals
 
 We have data ingestion so we will have data coming from multiple sources then we will design an ETL pipeline to extract transform and load our data easily. We will also build a data lake so that we can easily organize our data and build a data pipeline around it. It should be scalable. So, we will be using AWS Cloud. In the end, we will build a dashboard to easily visualize and understand what is happening in the data. 
 
-![ProjectArchitecture](https://github.com/JeffreyAsuncion/Data-Engineering-Project-001-Youtube-Ad-Campaign-End-to-End-Project/img/youtubeAdCampaignArchitecture.jpg
-)
+![ProjectArchitecture](img/youtubeAdCampaignArchitecture.jpg)
+
 
 Sources 
 
