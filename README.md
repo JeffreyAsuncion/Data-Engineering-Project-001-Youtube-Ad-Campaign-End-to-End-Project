@@ -40,5 +40,6 @@ Data Analytics
 Tableau Dashboard
 By connections Tableau to Athena to access the reporting layer 
 
+![ProjectAnalyticsReport](img/youtubeAdCampaignFinalAnalytics.jpg)
 
 
