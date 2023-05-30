@@ -19,17 +19,17 @@ We have data ingestion so we will have data coming from multiple sources then we
 Step 1: The data set is Kaggle - Trending YouTube Video Statistics dataset found on https://www.kaggle.com/datasets/datasnaek/youtube-new. Downloaded the dataset with consists of JSON files and CSV files to your local machine.
 
 
-Data Lake
+## Storage Layer - Data Lake
 
 S3 buckets - Raw - Cleansed - Reporting
 
-Raw 
-loaded thru S3 API Csv files
-loaded thru S3 API Json files
+Step 2: Raw Bucket
+Write scripts to load datasets from the local environment to S3 raw bucket. Using the AWS CLI and S3 API run the script `ingestion_local_to_raw.sh` to ingest the datasets from the local to raw bucket
 
-Cleansed
-CSV file to Parquet via Glue Spark job
-Json files to parquet via Lambda function attached to S3 Trigger
+
+Step 3: Cleansed Bucket
+After the initial EDA (Exploratory Data Analysis), the JSON files and CSV files will need preprocessing before continuing. The JSON files will need parsing and converting the dataset from JSON to Parquet format. The CSV files need to convert certain column data types from `string` to `bigint` and the necessary conversion from CSV format to Parquet Format. The preprocessing for the CSV file  `etl_cleansed_csv_to_parquet.py` and The JSON file will be preprocessed by AWS Lambda Function `lambda_function.py` set to an S3 upload Trigger. 
+
 
 Reporting
 Created a reporting layer which is a join of the two cleansed tables
