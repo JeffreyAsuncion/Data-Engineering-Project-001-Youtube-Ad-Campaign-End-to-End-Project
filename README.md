@@ -34,12 +34,11 @@ After the initial EDA (Exploratory Data Analysis), the JSON files and CSV files 
 **Step 4:** Reporting Bucket.
 Created an ETL to build reporting layer which is a join of the two cleansed tables.  The `etl_parquet_analytics_version` ETL glue job will run an ETL to join the two cleanse tables 
 
-![ReportingETLDiagram](img/youtubeAdCampaignGlueJob2.jpg)
 
 ## Data Analytics
 
 **Step 5 :** Tableau Dashboard
-By connections Tableau to Athena to access the reporting layer 
+Create a Dashboard by making a Connection from Tableau to Athena to access the reporting layer. In order to keep costs at a minumim, Tableau was used instead of QuickSight.
 
 ![ProjectAnalyticsReport](img/youtubeAdCampaignFinalAnalytics.jpg)
 
