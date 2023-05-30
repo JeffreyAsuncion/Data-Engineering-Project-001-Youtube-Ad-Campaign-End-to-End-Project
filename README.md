@@ -14,9 +14,9 @@ We have data ingestion so we will have data coming from multiple sources then we
 ![ProjectArchitecture](img/youtubeAdCampaignArchitecture.jpg)
 
 
-Sources 
+## Generation Layer 
 
-Kaggle - Trending Youtube Dataset
+Step 1: The data set is Kaggle - Trending YouTube Video Statistics dataset found on https://www.kaggle.com/datasets/datasnaek/youtube-new. Downloaded the dataset with consists of JSON files and CSV files to your local machine.
 
 
 Data Lake
