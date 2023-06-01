@@ -11,6 +11,16 @@ We have a client that wants to run new ad campaigns online and they have selecte
 
 We have data ingestion so we will have data coming from multiple sources then we will design an ETL pipeline to extract transform and load our data easily. We will also build a data lake so that we can easily organize our data and build a data pipeline around it. It should be scalable. So, we will be using AWS Cloud. In the end, we will build a dashboard to easily visualize and understand what is happening in the data. 
 
+
+## Services and Resources
+
+* **Amazon S3:** Amazon S3 is an object storage service that provides manufacturing scalability, data availability, security, and performance.
+* **AWS IAM:** This is nothing but identity and access management which enables us to manage access to AWS services and resources securely.
+* **Tableau:** Tableau is a visual analytics platform transforming the way we use data to solve problems—empowering people and organizations to make the most of their data.
+* **AWS Glue:** A serverless data integration service that makes it easy to discover, prepare, and combine data for analytics, machine learning, and application development.
+* **AWS Lambda:** Lambda is a computing service that allows programmers to run code without creating or managing servers.
+* **AWS Athena:** Athena is an interactive query service for S3 in which there is no need to load data it stays in S3.
+
 ![ProjectArchitecture](img/youtubeAdCampaignArchitecture.jpg)
 
 
