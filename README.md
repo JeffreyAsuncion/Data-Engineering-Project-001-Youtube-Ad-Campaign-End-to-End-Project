@@ -14,17 +14,22 @@ We have data ingestion so we will have data coming from multiple sources then we
 ![ProjectArchitecture](img/youtubeAdCampaignArchitecture.jpg)
 
 
-## Generation Layer 
+### Step 1: Datasets
 
-**Step 1:** The data set is Kaggle - Trending YouTube Video Statistics dataset found on https://www.kaggle.com/datasets/datasnaek/youtube-new. Downloaded the dataset with consists of JSON files and CSV files to your local machine.
+For Youtube-Ad-Campaign End-to-End Project, the Kaggle - Trending YouTube Video Statistics dataset can be found at https://www.kaggle.com/datasets/datasnaek/youtube-new. 
+
+This dataset includes several months (and counting) of data on daily trending YouTube videos. Data is included for the US, GB, DE, CA, FR, RU, MX, KR, JP, and IN regions (USA, Great Britain, Germany, Canada, France, Russia, Mexico, South Korea, Japan, and India respectively), with up to 200 listed trending videos per day.
+Each region’s data is in a separate file. Data includes the video title, channel title, publish time, tags, views, likes and dislikes, description, and comment count.
+The data also includes a `category_id` field, which varies between `region`. To retrieve the categories for a specific video, find it in the associated JSON. One such file is included for each of the five regions in the dataset.
+Download the dataset with consists of `JSON` files and `CSV` files to your local machine.
 
 
-## Storage Layer - Data Lake
 
-S3 buckets - Raw - Cleansed - Reporting
+### Step 2: Data Lake - Raw Bucket
 
-**Step 2:** Raw Bucket.
-Write scripts to load datasets from the local environment to S3 raw bucket. Using the AWS CLI and S3 API run the script `ingestion_local_to_raw.sh` to ingest the datasets from the local to raw bucket
+Write scripts to load datasets from the local environment to S3 raw bucket. Using the AWS CLI and S3 API run the script `ingestion_local_to_raw.sh` to ingest the datasets from the local to raw bucket. 
+
+After the initial EDA (Exploratory Data Analysis), the JSON files and CSV files will need preprocessing before continuing. The JSON files will need parsing and converting the dataset from JSON to Parquet format. The CSV files need to convert certain column data types from `string` to `bigint` and the necessary conversion from CSV format to Parquet Format.
 
 
 **Step 3:** Cleansed Bucket.
