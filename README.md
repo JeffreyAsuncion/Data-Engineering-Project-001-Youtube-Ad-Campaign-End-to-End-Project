@@ -38,8 +38,11 @@ The preliminary runs for the Glue Crawler run on top of the raw JSON and  raw CS
 
 
 
-**Step 3:** Cleansed Bucket.
-After the initial EDA (Exploratory Data Analysis), the JSON files and CSV files will need preprocessing before continuing. The JSON files will need parsing and converting the dataset from JSON to Parquet format. The CSV files need to convert certain column data types from `string` to `bigint` and the necessary conversion from CSV format to Parquet Format. The preprocessing for the CSV file  `etl_cleansed_csv_to_parquet.py` and The JSON file will be preprocessed by AWS Lambda Function `lambda_function.py` set to an S3 upload Trigger. 
+### Step 3: Data Lake - Cleansed Bucket
+
+Using AWS Glue Studio, create a custom ETL for the preprocessing from CSV to Parquet format. The spark job was customized to partition the dataset by region. The spark job for preprocessing for the CSV file is  `etl_cleansed_csv_to_parquet.py`.
+
+The JSON files will be preprocessed by AWS Lambda Function set to an S3 upload Trigger. The Lambda function `lambda_function.py` will parse the JSON file for the `item` key. Lambda will also transform the JSON file into Apache Parquet format. Create an S3 trigger to call the AWS Lambda function to execute whenever files are uploaded or modified in the raw bucket. 
 
 
 **Step 4:** Reporting Bucket.
