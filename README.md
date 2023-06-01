@@ -29,7 +29,13 @@ Download the dataset with consists of `JSON` files and `CSV` files to your local
 
 Write scripts to load datasets from the local environment to S3 raw bucket. Using the AWS CLI and S3 API run the script `ingestion_local_to_raw.sh` to ingest the datasets from the local to raw bucket. 
 
-After the initial EDA (Exploratory Data Analysis), the JSON files and CSV files will need preprocessing before continuing. The JSON files will need parsing and converting the dataset from JSON to Parquet format. The CSV files need to convert certain column data types from `string` to `bigint` and the necessary conversion from CSV format to Parquet Format.
+The results of the initial EDA (Exploratory Data Analysis) are that the JSON files and the CSV files will need preprocessing before moving forward and creating a Glue Data Catalog. It is necessary to run a Glue Crawler to create a Data Catalog in order to analyze the raw dataset with Amazon Athena for ad hoc queries and analysis. 
+
+The preliminary runs for the Glue Crawler run on top of the raw JSON and  raw CSV files shows:    
+
+* The JSON files will need parsing and converting the dataset from JSON to Parquet format. 
+* The CSV files need to convert certain column data types from `string` to `bigint` and the necessary conversion from CSV format to Parquet Format.
+
 
 
 **Step 3:** Cleansed Bucket.
